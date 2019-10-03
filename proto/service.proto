@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package ai.metathings.protocol.service.switch;
+option go_package = "switch";
+
+import "google/protobuf/empty.proto";
+
+message StateResponse {
+	string state = 1;
+}
+
+service SwitchService {
+	// turn switch on
+	rpc On(google.protobuf.Empty) returns (google.protobuf.Empty) {}
+	// turn stitch off
+	rpc Off(google.protobuf.Empty) returns (google.protobuf.Empty) {}
+	// get switch state
+	rpc State(google.protobuf.Empty) returns (StateResponse) {}
+}
