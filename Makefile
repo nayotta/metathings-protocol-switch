@@ -9,7 +9,7 @@ PROTO_FILES := $(shell find proto -name *.proto)
 
 build-go:
 	$(PROTOC) $(GRPC_FLAGS) \
-	--go_out=plugins=grpc:go \
+	--go_out=plugins=grpc:go/proto \
 	$(PROTO_FILES)
 
 build: build-go
